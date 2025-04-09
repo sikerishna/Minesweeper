@@ -150,52 +150,77 @@ def play_turn(board, row, column):
 
 
 def check_win(board):
+    """
+    Checks if the player has won the Minesweeper game.
+
+    Arguments:
+        board (list): A list representing the current state of the Minesweeper board.
+
+    Returns:
+        has won (bool): True if all non-mine positions have been revealed, False otherwise.
+
+    Notes:
+        - A win is achieved when every square that is *not* a mine ('X') has been revealed.
+        - Unrevealed squares are marked with 'O' and should not be present unless they are mines.
+        - The function assumes that mines are marked with 'X' and only unrevealed non-mine squares use 'O'.
+        - The board list should represent a full 5 × 5 Minesweeper grid (25 items).
+        """
     for position in board:
-        if position == '#' or position == 'O':
-            return False  # if a mine is selected, or there are unselected positions, the game has either been lost or not won yet
+        if position == '#' or position == 'O': # if a mine is selected, or there are unselected
+            # positions, the game has either been lost or not won yet
+            return False
 
     return True  # if no '#' or 'O' exists, the player has won
 
 
 def play_game(mine_positions):
+    """
+    Plays a complete game of Minesweeper with user input until the game is won or lost.
 
-    # Step 1: Initialize the board
-    board = initialise_board()
+    Arguments:
+        mine_positions (list of lists of int): A list where each inner list contains two integers
+        representing the row and column indices of a mine to be placed on the board.
 
-    # Step 2: Insert mines into the board
-    insert_mines(board, mine_positions)
+    Returns:
+        No Outputs
 
-    # Step 3: Explain the game to the user
-    print("Welcome to Minesweeper!")
+    Notes:
+        - The board is assumed to be of fixed dimensions (5x5)
+        - The mine_positions list must contain valid indices within the board range.
+        - The game ends when the player reveals all non-mine cells (win) or selects a mine (loss).
+        - The board is printed to the console after each move, showing the current game state.
+        - Final result ("You win!" or "You hit a mine! Game over.") is printed upon game conclusion.
+        """
+
+    board = initialise_board() # initialises board as all Os
+
+    insert_mines(board, mine_positions) #put mines into the board
+
+    print("Welcome to Minesweeper!") # Explain game to user
     print("The board is a 5x5 grid. Each position is a row and column, both starting from 0.")
     print("Enter your moves in the format 'X, X' where X is a number (e.g., '2, 3').")
     print("Here is your starting board (mines are hidden):")
-    display_board(board)
+    display_board(board) # shows starting board
 
-    # Step 4: Game loop
-    while True:
-        # Get user input and split into row and column
-        user_move = input("Enter your move (row, column):")
+    while True: # game loop
+        user_move = input("Enter your move (row, column):") # get user input
+        row, column = user_move.split(",")  # split the input into row and column
 
-        row, column = user_move.split(",")  # Split the input into row and column
-
-        row = int(row)
+        row = int(row) # turns into integer
         column = int(column)
 
         board, mine_location = play_turn(board, row, column)
 
-        # Display the updated board
-        print("Updated board:")
+        print("Updated board:") # display the updated board
         display_board(board)
 
-        # Step 6: Check if the game is over (win or loss)
-        if mine_location:  # Mine was hit
+        if mine_location:  # if mine is hit
             print("Game Over! You hit a mine.")
             print("Final board:")
-            display_board(board)  # Optionally reveal the whole board
+            display_board(board)
             break
 
-        if check_win(board):  # All safe positions cleared
+        if check_win(board):  # if all safe positions cleared
                 print("Congratulations, you win!")
                 print("Final board:")
                 display_board(board)  # Show the full board state
