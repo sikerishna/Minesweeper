@@ -9,7 +9,7 @@ from functions_minesweeper import *
 #         'X', 'O', 'O', 'O', 'X'  # Row 4
 #     ]
 
-# Test cases
+
 #display_board(board)
 #print(board)
 
