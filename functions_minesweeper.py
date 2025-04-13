@@ -5,7 +5,7 @@ def initialise_board():
     Initialises the minesweeper board as a 1D list
 
     This function creates a Minesweeper board represented as a list of 25 elements. Each element
-    is the string 'O', indicating an unrevealed square.
+    is the string 'O'.
 
     Arguments:
         No inputs
@@ -87,7 +87,7 @@ def count_adjacent_mines(board, row, column):
     Notes:
         - Adjacent squares include horizontal, vertical, and diagonal neighbors (up to 8
         surrounding cells).
-        - The board is treated as a 5 × 5 grid stored in a list; the index is calculated
+        - The board is treated as a 5 × 5 grid stored in a list. The index is calculated
         using: index = row * 5 + col.
         """
 
@@ -97,12 +97,12 @@ def count_adjacent_mines(board, row, column):
     # relative locations of the 8 adjacent positions
 
     for relative_row_pos, relative_col_pos in surrounding:
-        neighbor_row = row + relative_row_pos # actual position of adjacent row(s)
-        neighbor_col = column + relative_col_pos #actual position of adjacent column(s)
+        actual_row = row + relative_row_pos # actual position of adjacent row(s)
+        actual_col = column + relative_col_pos #actual position of adjacent column(s)
 
-        if 0 <= neighbor_row < 5 and 0 <= neighbor_col < 5: # makes sure surrounding positions
+        if 0 <= actual_row < 5 and 0 <= actual_col < 5: # makes sure surrounding positions
             # are in bounds
-            index = neighbor_row * 5 + neighbor_col # convert 2D position to 1D index
+            index = actual_row * 5 + actual_col # convert 2D position to 1D index
 
             if board[index] == 'X': # check if surrounding positions are mines
                 mine_count += 1
@@ -198,8 +198,8 @@ def play_game(mine_positions):
 
     print("Welcome to Minesweeper!") # Explain game to user
     print("The board is a 5x5 grid. Each position is a row and column, both starting from 0.")
-    print("Enter your moves in the format 'X, X' where X is a number (e.g., '2, 3').")
-    print("Here is your starting board (mines are hidden):")
+    print("Enter your moves in the format 'X, X' where X is a number (e.g., '2, 3')")
+    print("Here is your starting board (mines are hidden :)")
     display_board(board) # shows starting board
 
     while True: # game loop

@@ -35,6 +35,13 @@ def test_play_turn_hit_mine():
     insert_mines(board, [(2, 2)])  # Insert a mine at (2, 2)
     updated_board, mine_hit = play_turn(board, 2, 2)
     assert mine_hit is True  # Ensure that hitting the mine is detected
+
+
+def test_play_turn_hit_mine_update():
+    # Test if playing a turn and hitting a mine updates correctly
+    board = initialise_board()
+    insert_mines(board, [(2, 2)])  # Insert a mine at (2, 2)
+    updated_board, mine_hit = play_turn(board, 2, 2)
     assert updated_board[12] == '#'  # Check that the mine was replaced with '#'
 
 
@@ -43,8 +50,15 @@ def test_play_turn_reveal_safe_square():
     board = initialise_board()
     insert_mines(board, [(0, 0)])  # Insert a mine at (0, 0)
     updated_board, mine_hit = play_turn(board, 1, 1)  # Safe square
-    assert mine_hit is False  # Should not hit a mine
     assert updated_board[6] == '1'  # Revealed square should show '1', as (0, 0) is nearby
+
+
+def test_play_turn_no_mine():
+    # Test revealing a safe square during a turn
+    board = initialise_board()
+    insert_mines(board, [(0, 0)])  # Insert a mine at (0, 0)
+    updated_board, mine_hit = play_turn(board, 1, 1)  # Safe square
+    assert mine_hit is False  # Should not hit a mine
 
 
 def test_check_win_win_condition():
@@ -56,6 +70,7 @@ def test_check_win_win_condition():
              'X', '1', ' ', ' ', ' ']
     result = check_win(board)
     assert result is True  # Player has revealed every non-mine square
+
 
 
 def test_check_win_not_yet_won():
