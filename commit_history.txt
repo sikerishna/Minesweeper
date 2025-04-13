@@ -1,0 +1,54 @@
+commit 998f0e666a4a8608312ef937cb9ddf0e090982df
+Author: Saikrishna Bangalore <saikrishnabangalore@Saikrishnas-MacBook-Air-6.local>
+Date:   Sun Apr 13 20:10:06 2025 +1200
+
+    Final comments, cleaned up code, made things look nice
+
+commit 7d09f5c7ae37ee3de999e2d8364cc9bd9bf15824
+Author: Saikrishna Bangalore <saikrishnabangalore@Saikrishnas-MacBook-Air-6.local>
+Date:   Sun Apr 13 19:09:49 2025 +1200
+
+    Moved tests to test files and kept task file as playing around file
+
+commit 1cc466cd676d15773ef902f9484596c14778ce43
+Merge: 3eba1bd 36bd588
+Author: Saikrishna Bangalore <saikrishnabangalore@Saikrishnas-MacBook-Air-6.local>
+Date:   Sun Apr 13 19:08:51 2025 +1200
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 3eba1bd6d4c83bcb03dd59757a7d8ce48c67eb0c
+Author: Saikrishna Bangalore <saikrishnabangalore@Saikrishnas-MacBook-Air-6.local>
+Date:   Sun Apr 13 19:06:45 2025 +1200
+
+    Moved unit tests to test file
+
+commit 36bd5886f78d76e22fda10f88526d40a5f7bb9f9
+Author: sikerishna <52387431+sikerishna@users.noreply.github.com>
+Date:   Sun Apr 13 18:59:29 2025 +1200
+
+    Add files via upload
+
+commit 84947899bdd195f83589444928802383c8c847de
+Author: Saikrishna Bangalore <saikrishnabangalore@wifi-172-23-52-113.uoa-wifi.auckland.ac.nz>
+Date:   Thu Apr 10 15:56:58 2025 +1200
+
+    Unit tests V1
+
+commit fa6edbd1edacf790cfa9c690da7870b17d02e2e3
+Author: Saikrishna Bangalore <saikrishnabangalore@Saikrishnas-MacBook-Air-6.local>
+Date:   Wed Apr 9 13:18:24 2025 +1200
+
+    Added docstrings and comments for function 6 and 7
+
+commit 10766df09bb22bbb5175987c2fb5b292e4953be8
+Author: Saikrishna Bangalore <saikrishnabangalore@wifi-172-23-60-2.uoa-wifi.auckland.ac.nz>
+Date:   Wed Apr 9 12:24:47 2025 +1200
+
+    Docstrings added for funtion 1-5
+
+commit 8b9449fd6ee802d77936558079d41204f5d9a775
+Author: sikerishna <52387431+sikerishna@users.noreply.github.com>
+Date:   Wed Apr 9 10:21:19 2025 +1200
+
+    Add files via upload
